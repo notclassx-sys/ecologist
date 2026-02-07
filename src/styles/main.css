@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    /* Luxury Logistics Palette */
+    --primary: #5A3E2B;
+    /* Brown */
+    --primary-dark: #3B2A1F;
+    /* Dark Brown */
+    --bg-main: #FAF8F5;
+    /* Off White */
+    --bg-alt: #E5E5E5;
+    /* Light Grey */
+    --text-main: #1F1F1F;
+    --text-muted: #4B4B4B;
+    --accent: #C2A14D;
+    /* Gold */
+    --white: #ffffff;
+
+    /* Gradients Refined (Less Bright) */
+    --hero-gradient: radial-gradient(circle at 10% 20%, rgba(90, 62, 43, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(194, 161, 77, 0.05) 0%, transparent 50%);
+
+    /* Spacing */
+    --space-unit: 8px;
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-6: 48px;
+    --space-8: 64px;
+    --space-12: 96px;
+
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --radius-full: 9999px;
+
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    background-image: var(--hero-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    line-height: 1.8;
+    /* More breathing space */
+    font-weight: 300;
+    /* Lighter weight for body */
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+/* Typography Helpers */
+.text-gold {
+    color: var(--accent);
+}
+
+.font-bold {
+    font-weight: 800;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-3);
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Luxury Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(90, 62, 43, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(90, 62, 43, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Navigation */
+header {
+    padding: var(--space-3) 0;
+    background: rgba(250, 248, 245, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--bg-alt);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    letter-spacing: -0.05em;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    padding: var(--space-8) 0 var(--space-12);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-6);
+    max-width: 550px;
+}
+
+/* Refined Tracking Box */
+.tracking-wrapper {
+    margin-bottom: var(--space-6);
+    max-width: 500px;
+}
+
+.tracking-input-group {
+    display: flex;
+    background: white;
+    border: 1px solid var(--bg-alt);
+    padding: 6px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.tracking-input-group input {
+    flex: 1;
+    border: none;
+    padding: 0 var(--space-2);
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.tracking-input-group .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+}
+
+/* Luxury Badge Card */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-card {
+    background: var(--white);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--bg-alt);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+    text-align: center;
+    max-width: 220px;
+    /* Smaller size */
+    transition: var(--transition);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card .count {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 2px;
+}
+
+.stats-card .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+/* Abstract Decoration */
+.hero-bg-accent {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--bg-alt);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Services */
+.section {
+    padding: var(--space-12) 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.service-card {
+    background: white;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--bg-alt);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-main);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-3);
+    color: var(--primary);
+}
+
+.service-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Quote Section */
+.quote-box {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    border: 1px solid var(--bg-alt);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--primary-dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bg-alt);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--bg-main);
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: white;
+}
+
+/* Result Card */
+.tracking-response {
+    margin-top: var(--space-4);
+    background: white;
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--bg-alt);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .hero-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
